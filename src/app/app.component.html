@@ -1,28 +1,45 @@
 <body>
-    <div class="container">
-        <div class="row">
-        <div class="col-xs-12">
-            <h3>App Component Here.</h3>
-            <hr>
-            <!-- <app-servers></app-servers> -->
-            <!-- <div app-servers></div> -->
-            <div class="app-servers"></div>
-        </div>
-    </div>
-</div>
-<div class="container">
+  <div class="container">
     <div class="row">
-        <div class="col-xs-12">
-            <app-warning-alert></app-warning-alert>
-            <app-success-alert></app-success-alert>
-        </div>
+      <div class="col-xs-12">
+        <h3>App Component Here.</h3>
+        <hr />
+        <!-- <app-servers></app-servers> -->
+        <!-- <div app-servers></div> -->
+        <div class="app-servers"></div>
+      </div>
     </div>
-</div>
-<div class="container">
+  </div>
+  <div class="container">
     <div class="row">
-        <div class="col-xs-12">
-            <app-username></app-username>
-        </div>
+      <div class="col-xs-12">
+        <app-warning-alert></app-warning-alert>
+        <app-success-alert></app-success-alert>
+      </div>
     </div>
-</div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <app-username></app-username>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <button (click)="onToggleDisplay()" class="btn btn-primary">
+          Display
+        </button>
+        <p *ngIf="showSecret">Password = fish</p>
+      </div>
+      <div
+      *ngFor="let logItem of log"
+      [ngStyle]="{ backgroundColor: logItem >= 5 ? 'blue' : 'transparent' }"
+      [ngClass]="{ 'white-text': logItem >= 5 }"
+      >
+        {{ logItem }}
+      </div>
+    </div>
+  </div>
 </body>
